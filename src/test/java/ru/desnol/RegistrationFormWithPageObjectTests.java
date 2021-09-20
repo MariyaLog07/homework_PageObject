@@ -8,6 +8,7 @@ import ru.desnol.pages.RegistrationPage;
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
+import static ru.desnol.TestData.userNumber;
 
 
 public class RegistrationFormWithPageObjectTests extends TestBase {
@@ -27,7 +28,7 @@ public class RegistrationFormWithPageObjectTests extends TestBase {
                         .typeLastName(lastName);
         registrationPage.typeUserEmail(userEmail);
         $("#genterWrapper").$(byText("Female")).click();
-        $("#userNumber").setValue("8900369852");
+       registrationPage.typeUserNumber(userNumber);
         registrationPage.calendar.setDate("25","August","2020");
         $("#subjectsInput").setValue("Maths").pressEnter();
         $("#hobbiesWrapper").$(byText("Sports")).click();
@@ -37,7 +38,7 @@ public class RegistrationFormWithPageObjectTests extends TestBase {
         registrationPage.state.SetCity("NCR","Delhi");
         $(".modal-title").shouldHave(text("Thanks for submitting the form"));
         $(".table-responsive").shouldHave(text(firstName + " " + lastName), text(userEmail),
-                        text("Female"), text("8900369852"), text("25 August,2020"), text("Maths"),
+                        text("Female"), text(userNumber), text("25 August,2020"), text("Maths"),
            text("Sports"), text("1.png"), text(currentAddress), text("NCR Delhi"));
     }
 

@@ -15,7 +15,9 @@ public class RegistrationPage {
             firstNameInput = $("#firstName"),
             lastNameInput = $("#lastName"),
             userEmailInput = $("#userEmail"),
-            currentAddressInput=$("#currentAddress");
+            currentAddressInput=$("#currentAddress"),
+            userNumberInput=$("#userNumber");
+
     public CalendarComponent calendar = new CalendarComponent();
 
     public StateCityComponent state = new StateCityComponent();
@@ -39,9 +41,11 @@ public class RegistrationPage {
     public void typeUserEmail(String value) {
         userEmailInput.setValue(value);
     }
-
     public void typeCurrentAddress(String value) {
         currentAddressInput.setValue(value);
+    }
+    public void typeUserNumber(String value) {
+        userNumberInput.setValue(value);
     }
 }
 
