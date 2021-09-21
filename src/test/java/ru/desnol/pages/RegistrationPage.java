@@ -1,13 +1,13 @@
 package ru.desnol.pages;
 
-import com.codeborne.selenide.SelenideElement;
+
 import ru.desnol.pages.components.CalendarComponent;
 import ru.desnol.pages.components.StateCityComponent;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
-import static ru.desnol.TestData.*;
+
 
 
 public class RegistrationPage {
