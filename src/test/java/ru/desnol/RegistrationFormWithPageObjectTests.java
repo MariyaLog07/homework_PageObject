@@ -27,8 +27,8 @@ public class RegistrationFormWithPageObjectTests extends TestBase {
     @Test
     void fillFormTest() {
         registrationPage.openPage();
-        registrationPage.typeFirstName(firstName)
-                .typeLastName(lastName);
+        registrationPage.typeFirstName(firstName);
+        registrationPage.typeLastName(lastName);
         registrationPage.typeUserEmail(userEmail);
         registrationPage.clickGender(gender);
         registrationPage.typeUserNumber(userNumber);
@@ -38,7 +38,7 @@ public class RegistrationFormWithPageObjectTests extends TestBase {
         registrationPage.loadFile(file);
         registrationPage.typeCurrentAddress(currentAddress);
         registrationPage.state.setCity("NCR", "Delhi");
-        registrationPage.getTitle(title);
+        registrationPage.checkTitle(title);
         registrationPage.checkResultsValue("Student Name",firstName+" "+ lastName);
         registrationPage.checkResultsValue("Student Email",userEmail);
         registrationPage.checkResultsValue("Gender",gender);

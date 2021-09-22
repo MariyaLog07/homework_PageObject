@@ -11,7 +11,8 @@ import static com.codeborne.selenide.Selenide.*;
 
 
 public class RegistrationPage {
-    private final String FORM_TITLE = "Student Registration Form";
+
+   public String FORM_TITLE = "Student Registration Form";
 
     public CalendarComponent calendar = new CalendarComponent();
 
@@ -22,10 +23,10 @@ public class RegistrationPage {
         $(".practice-form-wrapper").shouldHave(text(FORM_TITLE));
     }
 
-    public RegistrationPage typeFirstName(String firstName) {
+    public void typeFirstName(String firstName) {
         $("#firstName").setValue(firstName);
-        return this;
     }
+
 
     public void typeLastName(String lastName) {
         $("#lastName").setValue(lastName);
@@ -60,7 +61,7 @@ public class RegistrationPage {
         $("#uploadPicture").uploadFromClasspath(file);
 }
 
-    public void getTitle(String title){
+    public void checkTitle(String title){
         $(".modal-title").shouldHave(text(title));
     }
 
